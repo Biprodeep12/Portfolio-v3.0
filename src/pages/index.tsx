@@ -112,7 +112,7 @@ export default function Portfolio() {
                   alt="Logo"
                 />
               </div>
-              <div className="font-montserrat font-black text-xl text-white drop-shadow-lg">Biprodeep</div>
+              <a href="#" className="font-montserrat font-black text-xl text-white drop-shadow-lg">Biprodeep</a>
             </div>
             
 
@@ -242,8 +242,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-6 relative z-10 bg-white/10 backdrop-blur-sm">
-        <div className="max-w-4xl mx-auto">
+      <section id="about" className="min-h-screen flex justify-center items-center pt-27.5 pb-20 px-6 relative z-10 bg-white/10 backdrop-blur-sm rounded-tl-[50px] rounded-tr-[50px]">
+        <div className="max-w-4xl">
           <div
             id="about-content"
             data-animate
@@ -344,8 +344,11 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="projects" className="py-20 px-6 relative z-10 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto">
+      <section
+        id="projects"
+        className="pt-27.5 pb-20 px-6 flex justify-center items-center min-h-screen relative z-10 bg-black/20 backdrop-blur-sm"
+      >
+        <div className="max-w-6xl">
           <div
             id="projects-title"
             data-animate
@@ -358,58 +361,67 @@ export default function Portfolio() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="space-y-16">
             {projects.map((project, index) => (
               <div
                 key={project.title}
                 id={`project-${index}`}
                 data-animate
-                className={`group bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 border border-white/20 hover:bg-white/20 ${
+                className={`group transition-all duration-1000 ${
                   isVisible[`project-${index}`] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="aspect-video bg-white/10 relative overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
+                <div
+                  className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                  }`}
+                >
+                  <div className={`relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-white/40 transition-all duration-500">
+                      <div className="aspect-video relative overflow-hidden">
+                        <Image
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          width={600}
+                          height={400}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                    </div>
 
-                <div className="p-6">
-                  <h3 className="font-montserrat font-bold text-xl mb-3 text-white group-hover:text-white transition-colors drop-shadow-sm">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/80 mb-4 leading-relaxed text-sm sm:text-base drop-shadow-sm">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-medium border border-white/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                    <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-white/5 to-transparent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                   </div>
 
-                  <button
-                    onClick={() => window.open(project.link, "__blank")}
-                    className="flex items-center cursor-pointer space-x-2 text-white/80 hover:text-white transition-all duration-300 group-hover:translate-x-1 font-medium drop-shadow-sm"
-                  >
-                    <span>View Project</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
+                  <div className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                    <div className="font-montserrat font-bold text-2xl lg:text-3xl text-white drop-shadow-sm group-hover:text-white transition-colors duration-300">
+                      {project.title}
+                    </div>
+
+                    <p className="text-white/80 leading-relaxed text-base lg:text-lg drop-shadow-sm">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={tech}
+                          className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                          style={{ animationDelay: `${techIndex * 100}ms` }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-20">
             <div
               id="github-link"
               data-animate
@@ -417,22 +429,25 @@ export default function Portfolio() {
                 isVisible["github-link"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <a
-                href="https://github.com/Biprodeep12"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-2xl hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 hover:shadow-xl font-semibold group"
-              >
-                <Github className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>View More Projects on GitHub</span>
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </a>
+              <div className="relative inline-block">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl opacity-50"></div>
+                <a
+                  href="https://github.com/Biprodeep12"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-2xl hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 hover:shadow-xl font-semibold group"
+                >
+                  <Github className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>View More Projects on GitHub</span>
+                  <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="experience" className="py-20 px-6 relative z-10 bg-white/5 backdrop-blur-sm">
+      <section id="experience" className="pt-27.5 pb-20 px-6 relative z-10 bg-white/5 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto">
           <div
             id="experience-title"
