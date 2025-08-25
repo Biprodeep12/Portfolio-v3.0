@@ -246,12 +246,12 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-lg leading-relaxed mb-6 text-white/90 drop-shadow-sm">
-                  I'm a passionate developer who believes in the power of clean, efficient code and beautiful design.
+                  I&apos;m a passionate developer who believes in the power of clean, efficient code and beautiful design.
                   With expertise in modern web technologies, I create digital solutions that are both functional and
                   aesthetically pleasing.
                 </p>
                 <p className="text-lg leading-relaxed mb-8 text-white/90 drop-shadow-sm">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open source projects,
+                  When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open source projects,
                   or enjoying a good cup of coffee while sketching out my next big idea.
                 </p>
 
@@ -503,10 +503,10 @@ export default function Portfolio() {
             }`}
           >
             <h2 className="font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl mb-8 text-white drop-shadow-lg">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <p className="text-lg sm:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
-              Have a project in mind? I'd love to hear about it. Let's create something amazing together.
+              Have a project in mind? I&apos;d love to hear about it. Let&apos;s create something amazing together.
             </p>
 
             <div className="flex justify-center mb-12">
