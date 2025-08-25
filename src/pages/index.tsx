@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Mail, Github, Linkedin, ExternalLink, Menu, X, ChevronDown, Instagram } from "lucide-react"
+import Image from "next/image"
 
 export default function Portfolio() {
   const [scrollY, setScrollY] = useState(0)
@@ -100,10 +101,21 @@ export default function Portfolio() {
 
       <div className="fixed inset-0 bg-black/50 z-0"></div>
 
-      <nav className="absolute top-0 w-full z-50 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+      <nav className={`fixed w-full z-50 ${scrollY > 50 && window.innerWidth > 768 ? "top-5":"top-0"} transition-all duration-300`}>
+        <div className={`mx-auto px-6 border-white rounded-full ${scrollY > 50 && window.innerWidth > 768 ? "max-w-5xl border-2 py-3 bg-white/10  backdrop-blur-md":"py-4 max-w-6xl border-0"} transition-all duration-300` }>
           <div className="flex justify-between items-center">
-            <div className="font-montserrat font-black text-xl text-white drop-shadow-lg">Biprodeep</div>
+            <div className="flex flex-row gap-4 flex-nowrap items-center">
+              <div className="border-1 border-white rounded-full overflow-hidden">
+                <Image
+                  src='/Kalo.jpeg'
+                  width={40}
+                  height={40}
+                  alt="Logo"
+                />
+              </div>
+              <div className="font-montserrat font-black text-xl text-white drop-shadow-lg">Biprodeep</div>
+            </div>
+            
 
             <div className="hidden md:flex space-x-8">
               <button
@@ -147,10 +159,10 @@ export default function Portfolio() {
 
           <div
             className={`md:hidden transition-all duration-300 overflow-hidden ${
-              isMobileMenuOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+              isMobileMenuOpen ? "max-h-68 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="py-4 space-y-2 mt-4 bg-white/10 backdrop-blur-md rounded-lg px-4 -mx-4 shadow-lg">
+            <div className="py-4 space-y-2 rounded-2xl mt-4 bg-white/10 backdrop-blur-md px-4">
               <button
                 onClick={() => scrollToSection("about")}
                 className="block w-full text-left py-3 px-4 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 font-medium"
@@ -241,41 +253,92 @@ export default function Portfolio() {
             }`}
           >
             <h2 className="font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl mb-12 text-center text-white drop-shadow-lg">
-              About Me
+              My Expertise
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid gap-12 items-center">
               <div>
                 <p className="text-lg leading-relaxed mb-6 text-white/90 drop-shadow-sm">
-                  I&apos;m a passionate developer who believes in the power of clean, efficient code and beautiful design.
-                  With expertise in modern web technologies, I create digital solutions that are both functional and
-                  aesthetically pleasing.
+                  I specialize in building{" "}
+                  <span className="text-white font-semibold">scalable, high-performance web applications</span> with a
+                  strong focus on clean architecture and modern best practices. My technical expertise includes:
                 </p>
+
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-white font-semibold">Next.js & React.js</span>
+                      <span className="text-white/80">
+                        {" "}
+                        – Developing fast, SEO-friendly, and dynamic web applications with smooth user experiences.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-white font-semibold">TypeScript & JavaScript (ES6+)</span>
+                      <span className="text-white/80">
+                        {" "}
+                        – Writing robust, maintainable, and type-safe code for both frontend and backend.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-white font-semibold">UI/UX Implementation</span>
+                      <span className="text-white/80">
+                        {" "}
+                        – Creating responsive, accessible, and user-focused designs with modern styling tools and
+                        frameworks.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-white font-semibold">API Integration & State Management</span>
+                      <span className="text-white/80">
+                        {" "}
+                        – Connecting applications seamlessly with REST APIs, optimizing performance with tools like
+                        React Query, Redux, and custom hooks.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-white font-semibold">Performance Optimization</span>
+                      <span className="text-white/80">
+                        {" "}
+                        – Ensuring fast load times, scalability, and efficient rendering through advanced techniques.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-white font-semibold">Collaboration & Analytics</span>
+                      <span className="text-white/80">
+                        {" "}
+                        – Experience integrating real-time analytics and working in team-based environments to deliver
+                        impactful solutions.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
                 <p className="text-lg leading-relaxed mb-8 text-white/90 drop-shadow-sm">
-                  When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open source projects,
-                  or enjoying a good cup of coffee while sketching out my next big idea.
+                  With this skill set, I aim to deliver{" "}
+                  <span className="text-white font-semibold">modern, reliable, and user-friendly web applications</span>{" "}
+                  tailored to real-world needs.
                 </p>
-
-                <div className="flex flex-wrap gap-3">
-                  {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python"].map((skill) => (
-                    <span
-                      key={skill}
-                      className="bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-medium hover:scale-105 hover:bg-white/30 hover:border-white/50 transition-all duration-200 text-white drop-shadow-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex justify-center">
-                <div className="w-64 h-64 sm:w-80 sm:h-80 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center relative overflow-hidden group shadow-xl border border-white/30">
-                  <img
-                    src="/Kalo.jpeg"
-                    alt="Profile"
-                    className="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-                </div>
               </div>
             </div>
           </div>
