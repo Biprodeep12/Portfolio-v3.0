@@ -90,8 +90,7 @@ export default function Portfolio() {
       <div
         className="fixed -inset-20 bg-cover bg-center bg-no-repeat z-0"
         style={{
-          backgroundImage:
-            "url('https://imgs.search.brave.com/I8JQEZ2uRwqhckg8C2PiEH7SJVcjtoDgXyJB2QBylUE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIy/MTQ2ODYzOS92ZWN0/b3IvYWJzdHJhY3Qt/d2hpdGUtYmFja2dy/b3VuZC1nZW9tZXRy/aWMtdGV4dHVyZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/WTU1NlJhbzRhNGJu/YUJ4X0VYMVpHR3Nl/R3dMZUl6ekpKQTUy/cWowSTRkYz0')",
+          backgroundImage: "url('/bgk.jpg')",
           backgroundSize: "300%",
           transform: `translateY(${scrollY * 0.02}px)`,
           willChange: "transform",
@@ -101,7 +100,7 @@ export default function Portfolio() {
 
       <div className="fixed inset-0 bg-black/50 z-0"></div>
 
-      <nav className={`fixed w-full z-50 ${scrollY > 50 && window.innerWidth > 768 ? "top-5":"top-0"} transition-all duration-300`}>
+      <nav className={`fixed w-full max-md:backdrop-blur-md z-50 ${scrollY > 50 && window.innerWidth > 768 ? "top-5":"top-0"} transition-all duration-300`}>
         <div className={`mx-auto px-6 border-white rounded-full ${scrollY > 50 && window.innerWidth > 768 ? "max-w-5xl border-2 py-3 bg-white/10  backdrop-blur-md":"py-4 max-w-6xl border-0"} transition-all duration-300` }>
           <div className="flex justify-between items-center">
             <div className="flex flex-row gap-4 flex-nowrap items-center">
