@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Mail, Github, Linkedin, ExternalLink, Menu, X, ChevronDown, Instagram } from "lucide-react"
+import { Mail, Github, Linkedin, ExternalLink, Menu, X, ChevronDown, Instagram, ExternalLinkIcon } from "lucide-react"
 import Image from "next/image"
 
 export default function Portfolio() {
@@ -44,26 +44,29 @@ export default function Portfolio() {
     {
       title: "FoodDraft",
       description:
-        "An interactive food search platform powered by Open Food Facts API with infinite scrolling, enabling users to explore detailed nutrition data effortlessly.",
+        "An interactive food search and discovery platform powered by the Open Food Facts API. It features infinite scrolling for seamless browsing, advanced search capabilities, and detailed nutrition insights. Built with React Query for efficient data fetching and caching, the app provides a smooth user experience while helping users make informed food choices.",
       tech: ["Next.js", "TypeScript", "Axios", "@tanstack/react-query"],
       image: "/food.png",
       link: "https://github.com/Biprodeep12/FoodDraft",
+      src: "https://food-draft.vercel.app/"
     },
     {
       title: "Munchlesson",
       description:
-        "A flashcard-based learning app with Firebase integration, allowing users to create, edit, and organize study cards with a sleek and modern design.",
+        "A flashcard-based learning application designed to make studying engaging and efficient. With Firebase integration, users can securely create, edit, and organize personalized flashcards in real-time. The sleek, responsive design with Tailwind CSS ensures accessibility across devices, while the intuitive UI makes learning flexible and enjoyable.",
       tech: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
       image: "/study.png",
       link: "https://github.com/Biprodeep12/MunchLesson",
+      src: "https://futurehaw.vercel.app/"
     },
     {
       title: "HealthTrack",
       description:
-        "AI-powered prescription analysis app where users upload prescriptions and receive concise medical summaries using OpenRouter’s LLaMA model.",
+        "An AI-powered prescription analysis platform that simplifies healthcare communication. Users can upload handwritten or digital prescriptions, and the system leverages OpenRouter’s models to generate clear and concise medical summaries. Integrated with Firebase for secure storage, HealthTrack bridges the gap between complex prescriptions and patient understanding, offering a reliable digital health assistant.",
       tech: ["Next.js", "TypeScript", "OpenRouter API", "Firebase"],
       image: "/health.png",
       link: "https://github.com/Biprodeep12/HEALTH-TRACK",
+      src: "https://health-track-theta.vercel.app/"
     },
   ]
 
@@ -243,7 +246,7 @@ export default function Portfolio() {
       </section>
 
       <section id="about" className="min-h-screen flex justify-center items-center pt-27.5 pb-20 px-6 relative z-10 bg-white/10 backdrop-blur-sm rounded-tl-[50px] rounded-tr-[50px]">
-        <div className="max-w-4xl">
+        <div className="max-w-6xl">
           <div
             id="about-content"
             data-animate
@@ -251,52 +254,116 @@ export default function Portfolio() {
               isVisible["about-content"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl mb-12 text-center text-white drop-shadow-lg">
+            <div className="font-montserrat font-bold text-4xl sm:text-5xl md:text-6xl mb-6 text-center text-white drop-shadow-lg">
               My Expertise
-            </h2>
+            </div>
             <div className="grid gap-12 items-center">
               <div>
-                <p className="text-lg leading-relaxed mb-6 text-white/90 drop-shadow-sm">
+                <div className="text-lg px-6 max-w-4xl mx-auto lg:text-xl text-center leading-relaxed mb-12 text-white/90 drop-shadow-sm">
                   I specialize in building{" "}
                   <span className="text-white font-semibold">scalable, high-performance web applications</span> with a
                   strong focus on clean architecture and modern best practices. My technical expertise includes:
-                </p>
+                </div>
 
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <span className="text-white font-semibold">Next.js & React.js</span>
-                      <span className="text-white/80">
-                        {" "}
-                        – Developing fast, SEO-friendly, and dynamic web applications with smooth user experiences.
-                      </span>
+                <div className="flex flex-row justify-center items-center flex-wrap mb-12 max-[500px]:scale-70 max-[500px]:-my-40">
+                  <div
+                    id="about-1"
+                    data-animate
+                    className={`flex flex-col w-[375px] transform rotate-12 hover:scale-105 transition-all duration-300 mb-8 sm:mb-0 ${
+                      isVisible["about-1"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                    style={{ boxShadow: "10px 7px 2px rgba(0, 0, 0, 0.3)", transitionDelay: "200ms" }}
+                  >
+                    <div className="py-3 px-6 bg-white/20 backdrop-blur-md text-xl text-white leading-relaxed font-semibold border border-white/30">
+                      Next.js & React.js
+                    </div>
+
+                    <div className="py-6 px-6 bg-white backdrop-blur-md flex flex-col gap-6 border border-white/20 border-t-0">
+                      <div className="text-black/50 font-medium text-lg leading-relaxed">
+                        Developing fast, SEO-friendly, and dynamic web applications with smooth user experiences
+                      </div>
+
+                      <div className="grid grid-cols-4">
+                        {["Performance", "Accessibility", "Best Practices", "SEO"].map((metric, index) => (
+                          <div key={index} className="flex flex-col items-center gap-3">
+                            <div className="relative w-15 h-15 rounded-full border-4 border-green-500 bg-green-500/10 flex items-center justify-center">
+                              <span className="text-green-500 font-bold text-lg">100</span>
+                            </div>
+                            <div className="text-[12px] text-black/50 text-center font-medium leading-tight max-w-[80px]">{metric}</div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <span className="text-white font-semibold">TypeScript & JavaScript (ES6+)</span>
-                      <span className="text-white/80">
-                        {" "}
-                        – Writing robust, maintainable, and type-safe code for both frontend and backend.
-                      </span>
+                  <div
+                    id="about-2"
+                    data-animate
+                    className={`flex flex-col w-[325px] transform -rotate-11 z-10 drop-shadow-lg hover:scale-105 transition-all duration-300 mb-8 sm:mb-0 ${
+                      isVisible["about-2"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                    style={{ boxShadow: "9px 10px 2px rgba(0, 0, 0, 0.3)", transitionDelay: "400ms" }}
+                  >
+                    <div className="py-3 px-6 bg-gray-400 text-xl text-white text-nowrap leading-relaxed font-semibold border border-white/30">
+                      TypeScript & JavaScript (ES6+)
+                    </div>
+
+                    <div className="pb-6 pt-3 px-6 bg-white backdrop-blur-md flex flex-col gap-1 border border-white/20 border-t-0">
+                      <div className="text-black/50 font-medium text-lg leading-relaxed">
+                        Writing robust, type-safe, and maintainable code.
+                      </div>
+                      <div className="w-full bg-blue-950 p-1.5 rounded-xl flex flex-col">
+                        <div className="border-b-[1px] border-white p-2 flex flex-row gap-2 items-center">
+                          <div className="rounded-full w-2.5 h-2.5 bg-red-400"></div>
+                          <div className="rounded-full w-2.5 h-2.5 bg-blue-400"></div>
+                          <div className="rounded-full w-2.5 h-2.5 bg-green-400"></div>
+                        </div>
+                        <div className="flex flex-col p-1">
+                          <div className="text-blue-500">interface <span className="text-green-300">ProfileViewer </span><span className="text-yellow-400">{`{`}</span></div>
+                          <div className="pl-4 flex flex-col">
+                            <div className="text-blue-200">name: <span className="text-green-300">string</span></div>
+                            <div className="text-blue-200">description: <span className="text-green-300">string</span></div>
+                            <div className="text-blue-200">profileImage: <span className="text-green-300">string</span></div>
+                            <div className="text-blue-200">socialLinks: <span className="text-purple-400">{`{`}</span></div>
+                            <div className="pl-4 flex flex-col">
+                              <div className="text-blue-200">linkedin: <span className="text-green-300">string</span></div>
+                              <div className="text-blue-200">email: <span className="text-green-300">string</span></div>
+                            </div>
+                            <div className="text-purple-400">{`}`}</div>
+                          </div>
+                          <div className="text-yellow-400">{`}`}</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <span className="text-white font-semibold">UI/UX Implementation</span>
-                      <span className="text-white/80">
-                        {" "}
-                        – Creating responsive, accessible, and user-focused designs with modern styling tools and
-                        frameworks.
-                      </span>
+                  <div
+                    id="about-3"
+                    data-animate
+                    className={`flex flex-col w-[300px] transform rotate-8 max-[500px]:rotate-10 z-20 drop-shadow-2xl hover:scale-105 transition-all duration-300 mb-8 sm:mb-0 ${
+                      isVisible["about-3"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                    style={{ boxShadow: "10px 7px 2px rgba(0, 0, 0, 0.3)", transitionDelay: "600ms" }}
+                  >
+                    <div className="py-3 px-6 bg-gray-300 backdrop-blur-md text-xl text-white leading-relaxed font-semibold border border-white/30">
+                      Backend Development
+                    </div>
+
+                    <div className="py-6 px-8 bg-white backdrop-blur-md flex flex-col gap-6 border border-white/20 border-t-0">
+                      {["NodeJs", "Python", "FastApi", "MongoDB"].map((tech, index) => (
+                        <div key={index} className="flex flex-row gap-4 items-center">
+                          <img
+                            src={`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
+                            alt="backend-tech"
+                          />
+                          <div className="text-black/50 font-medium text-lg leading-relaxed">{tech}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
+                </div>
 
+                <div className="space-y-4 px-6 mb-8 max-w-4xl mx-auto text-lg">
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
@@ -333,11 +400,11 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <p className="text-lg leading-relaxed mb-8 text-white/90 drop-shadow-sm">
+                <div className="text-lg px-6 leading-relaxed mb-8 text-white/90 drop-shadow-sm">
                   With this skill set, I aim to deliver{" "}
                   <span className="text-white font-semibold">modern, reliable, and user-friendly web applications</span>{" "}
                   tailored to real-world needs.
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -352,74 +419,92 @@ export default function Portfolio() {
           <div
             id="projects-title"
             data-animate
-            className={`transition-all duration-1000 ${
+            className={`transition-all duration-1000 text-center mb-20 ${
               isVisible["projects-title"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl mb-16 text-center text-white drop-shadow-lg">
+            <div className="font-montserrat font-bold text-4xl sm:text-5xl md:text-6xl mb-6 text-center text-white drop-shadow-lg">
               Featured Projects
-            </h2>
+            </div>
+            <div className="text-white/80 text-lg lg:text-xl max-w-2xl mx-auto">
+              A showcase of recent projects that demonstrate my technical skills and creative problem-solving
+            </div>
           </div>
 
-          <div className="space-y-16">
-            {projects.map((project, index) => (
+        <div className="space-y-24">
+          {projects.map((project, index) => (
+            <div
+              key={project.title}
+              id={`project-${index}`}
+              data-animate
+              className={`group transition-all duration-1000 ${
+                isVisible[`project-${index}`] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
               <div
-                key={project.title}
-                id={`project-${index}`}
-                data-animate
-                className={`group transition-all duration-1000 ${
-                  isVisible[`project-${index}`] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                className={`grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center ${
+                  index % 2 === 1 ? "md:grid-flow-col-dense" : ""
                 }`}
-                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div
-                  className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
-                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                  }`}
-                >
-                  <div className={`relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-white/40 transition-all duration-500">
-                      <div className="aspect-video relative overflow-hidden">
-                        <Image
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                          width={600}
-                          height={400}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      </div>
+                <div className={`relative ${index % 2 === 1 ? "md:col-start-2" : ""}`}>
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 group-hover:border-white/40 transition-all duration-300">
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        width={480}
+                        height={480}
+                        className="w-full h-full object-center group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
-
-                    <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-                    <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-white/5 to-transparent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                   </div>
 
-                  <div className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                    <div className="font-montserrat font-bold text-2xl lg:text-3xl text-white drop-shadow-sm group-hover:text-white transition-colors duration-300">
-                      {project.title}
-                    </div>
+                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-white/5 to-transparent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                </div>
 
-                    <p className="text-white/80 leading-relaxed text-base lg:text-lg drop-shadow-sm">
-                      {project.description}
-                    </p>
+                <div className={`space-y-6 flex flex-col ${index % 2 === 1 ? "md:items-end md:text-right" : ""}`}>
+                  <div className="font-bold text-3xl md:text-4xl text-white drop-shadow-sm group-hover:text-white transition-colors duration-300">
+                    {project.title}
+                  </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <span
-                          key={tech}
-                          className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-                          style={{ animationDelay: `${techIndex * 100}ms` }}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  <p className="text-white/80 leading-relaxed text-base sm:text-lg md:text-xl drop-shadow-sm">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={tech}
+                        className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                        style={{ animationDelay: `${techIndex * 100}ms` }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <button
+                      onClick={() => window.open(project.src, "_blank")}
+                      className="group cursor-pointer flex flex-row gap-2 items-center justify-center bg-white text-black px-5 py-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden font-semibold"
+                    >
+                      <ExternalLinkIcon className="w-5 h-5 inline-block mr-2" />
+                      <span className="relative z-10">View Live Project</span>
+                    </button>
+                    <button
+                      onClick={() => window.open(project.link, "_blank")}
+                      className="group cursor-pointer flex flex-row gap-2 items-center justify-center border-2 border-white/80 text-white px-5 py-4 rounded-2xl hover:bg-white/10 hover:border-white transition-all duration-300 hover:scale-105 hover:shadow-xl relative overflow-hidden font-semibold backdrop-blur-sm"
+                    >
+                      <Github className="w-5 h-5 inline-block mr-2" />
+                      <span className="relative z-10">Source Code</span>
+                    </button>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
           <div className="text-center mt-20">
             <div
@@ -456,7 +541,7 @@ export default function Portfolio() {
               isVisible["experience-title"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl mb-16 text-center text-white drop-shadow-lg">
+            <h2 className="font-montserrat font-bold text-3xl sm:text-4xl md:text-6xl mb-16 text-center text-white drop-shadow-lg">
               Experience
             </h2>
           </div>
@@ -542,7 +627,7 @@ export default function Portfolio() {
               isVisible["tech-title"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl text-center text-white drop-shadow-lg mb-4">
+            <h2 className="font-montserrat font-bold text-4xl sm:text-5xl md:text-6xl text-center text-white drop-shadow-lg mb-4">
               Tech Stack
             </h2>
             <p className="text-lg text-white/80 text-center max-w-2xl mx-auto drop-shadow-sm">
