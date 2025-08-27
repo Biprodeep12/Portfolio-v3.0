@@ -375,11 +375,15 @@ export default function Portfolio() {
                   <div
                     id="about-4" 
                     data-animate
-                    className={`flex flex-col items-center mt-30 gap-20 bg-white/10 w-full mx-auto backdrop-blur-sm rounded-3xl p-10 border border-white/20 transition-all duration-500 ${
+                    className={`flex flex-col items-center mt-20 lg:gap-20 gap-15 bg-white/10 w-full mx-auto backdrop-blur-sm rounded-3xl px-10 py-18 border border-white/20 transition-all duration-500 ${
                     isVisible["about-4"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
                     style={{ transitionDelay: "600ms" }}>
-                    <div className="flex flex-col lg:flex-row gap-20 items-center justify-between">
+                    <div className="flex flex-col lg:flex-row lg:gap-20 gap-13 items-center justify-between">
+                      <div className="flex lg:hidden flex-col max-w-xl">
+                        <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">UI/UX Implementation</div>
+                        <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Crafting responsive, accessible, and user-focused interfaces using modern styling frameworks.</div>
+                      </div>
                       <div className="relative">
                         <div className="bg-white px-3 pt-15 pb-3 aspect-auto rotate-5 translate-x-5 drop-shadow-2xl" style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)"}}>
                           <Image
@@ -400,20 +404,20 @@ export default function Portfolio() {
                           />
                         </div>
                       </div>
-                      <div className="flex flex-col max-w-xl">
+                      <div className="lg:flex hidden flex-col max-w-xl">
                         <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">UI/UX Implementation</div>
                         <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Crafting responsive, accessible, and user-focused interfaces using modern styling frameworks.</div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-20 items-center justify-between">
-                      <div className="flex flex-col max-w-xl text-right">
+                    <div className="flex flex-col lg:flex-row lg:gap-20 gap-13 items-center justify-between">
+                      <div className="flex flex-col max-w-xl lg:text-right text-left">
                         <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">Performance Optimization</div>
                         <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Ensuring applications are fast, scalable, and optimized for real-world usage.</div>
                       </div>
                       <div className="bg-white px-3 aspect-auto py-10 drop-shadow-2xl" style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)"}}>
                         <Image
-                          src='/food.png'
+                          src='/opt.png'
                           alt="ui/ux"
                           width={350}
                           height={350}
@@ -422,7 +426,11 @@ export default function Portfolio() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-20 items-center justify-between">
+                    <div className="flex flex-col lg:flex-row lg:gap-20 gap-13 items-center justify-between">
+                      <div className="flex lg:hidden flex-col max-w-xl">
+                        <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">Collaboration & Analytics</div>
+                        <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Experience integrating analytics, monitoring tools, and working in team-driven environments.</div>
+                      </div>
                       <div className="relative">
                         <div className="bg-white px-3 pt-15 pb-3 aspect-auto rounded-xl translate-x-3 -translate-y-3 drop-shadow-2xl">
                           <Image
@@ -443,13 +451,13 @@ export default function Portfolio() {
                           />
                         </div>
                       </div>
-                      <div className="flex flex-col max-w-xl">
+                      <div className="lg:flex hidden flex-col max-w-xl">
                         <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">Collaboration & Analytics</div>
                         <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Experience integrating analytics, monitoring tools, and working in team-driven environments.</div>
                       </div>
                     </div>
 
-                  <div className="text-xl px-6 leading-relaxed mb-8 text-white/90 drop-shadow-sm">
+                  <div className="text-xl px-6 leading-relaxed text-white/90 drop-shadow-sm">
                     With this skill set, I aim to deliver{" "}
                     <span className="text-white font-semibold">modern, reliable, and user-friendly web applications</span>{" "}
                     tailored to real-world needs.
