@@ -92,7 +92,7 @@ export default function Portfolio() {
   return (
     <>
       <Head>
-        <title>Biprodeep's Portfolio</title>
+        <title>Biprodeep&apos;s Portfolio</title>
         <meta 
           name="description" 
           content="Biprodeep's portfolio showcasing full-stack development skills in Next.js, React, TypeScript, Node.js, and Python. Explore projects, services, and achievements." 
