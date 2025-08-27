@@ -266,8 +266,7 @@ export default function Portfolio() {
               <div className="font-montserrat font-bold text-4xl sm:text-5xl md:text-6xl mb-6 text-center text-white drop-shadow-lg">
                 My Expertise
               </div>
-              <div className="grid gap-12 items-center">
-                <div>
+              <div className="flex flex-col items-center">
                   <div className="text-lg px-6 max-w-4xl mx-auto lg:text-xl text-center leading-relaxed mb-12 text-white/90 drop-shadow-sm">
                     I specialize in building{" "}
                     <span className="text-white font-semibold">scalable, high-performance web applications</span> with a
@@ -379,27 +378,27 @@ export default function Portfolio() {
                     isVisible["about-4"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
                     style={{ transitionDelay: "600ms" }}>
-                    <div className="flex flex-col lg:flex-row lg:gap-20 gap-13 items-center justify-between">
-                      <div className="flex lg:hidden flex-col max-w-xl">
-                        <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">UI/UX Implementation</div>
-                        <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Crafting responsive, accessible, and user-focused interfaces using modern styling frameworks.</div>
+                    <div id="photo-1" data-animate className="flex flex-col lg:flex-row lg:gap-20 gap-5 items-center justify-between">
+                      <div className="flex lg:hidden flex-col max-w-xl max-md:text-center">
+                        <div className="font-montserrat font-bold text-2xl md:text-3xl text-white mb-2 drop-shadow-sm">UI/UX Implementation</div>
+                        <div className="text-lg md:text-xl font-semibold text-white/90 drop-shadow-sm">Crafting responsive, accessible, and user-focused interfaces using modern styling frameworks.</div>
                       </div>
-                      <div className="relative">
-                        <div className="bg-white px-3 pt-15 pb-3 aspect-auto rotate-5 translate-x-5 drop-shadow-2xl" style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)"}}>
+                      <div className="relative max-md:w-[90%]">
+                        <div className={`bg-white px-3 pt-15 pb-3 aspect-auto rotate-5 translate-x-5 drop-shadow-2xl transition-all duration-300 ${isVisible["photo-1"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)",transitionDelay: "1200ms"}}>
                           <Image
                             src='/food.png'
                             alt="ui/ux"
-                            width={350}
-                            height={350}
+                            width={450}
+                            height={450}
                             className="object-contain"
                           />
                         </div>
-                        <div className="bg-white px-3 pt-15 pb-3 aspect-auto absolute inset-0 -z-10 -rotate-5 -translate-x-5" style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)"}}>
+                        <div className={`bg-white px-3 pt-15 pb-3 aspect-auto absolute inset-0 -z-10 -rotate-5 -translate-x-5 transition-all duration-300 ${isVisible["photo-1"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)",transitionDelay: "1000ms" }}>
                           <Image
                             src='/study.png'
                             alt="ui/ux"
-                            width={350}
-                            height={350}
+                            width={450}
+                            height={450}
                             className="object-contain"
                           />
                         </div>
@@ -410,44 +409,44 @@ export default function Portfolio() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row lg:gap-20 gap-13 items-center justify-between">
-                      <div className="flex flex-col max-w-xl lg:text-right text-left">
-                        <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">Performance Optimization</div>
-                        <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Ensuring applications are fast, scalable, and optimized for real-world usage.</div>
+                    <div id="photo-3" data-animate className="flex flex-col lg:flex-row lg:gap-20 gap-5 items-center justify-between">
+                      <div className="flex flex-col max-w-xl lg:text-right md:text-left text-center">
+                        <div className="font-montserrat font-bold text-2xl md:text-3xl text-white mb-2 drop-shadow-sm">Performance Optimization</div>
+                        <div className="text-lg md:text-xl font-semibold text-white/90 drop-shadow-sm">Ensuring applications are fast, scalable, and optimized for real-world usage.</div>
                       </div>
-                      <div className="bg-white px-3 aspect-auto py-10 drop-shadow-2xl" style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)"}}>
+                      <div className={`bg-white px-3 aspect-auto py-10 drop-shadow-2xl transition-all duration-300 ${isVisible["photo-3"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)", transitionDelay: "600ms"}}>
                         <Image
                           src='/opt.png'
                           alt="ui/ux"
-                          width={350}
-                          height={350}
+                            width={450}
+                            height={450}
                           className="object-contain"
                         />
                       </div>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row lg:gap-20 gap-13 items-center justify-between">
-                      <div className="flex lg:hidden flex-col max-w-xl">
-                        <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">Collaboration & Analytics</div>
-                        <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Experience integrating analytics, monitoring tools, and working in team-driven environments.</div>
+                    <div id="photo-4" data-animate className="flex flex-col lg:flex-row lg:gap-20 gap-5 items-center justify-between">
+                      <div className="flex lg:hidden flex-col max-w-xl max-md:text-center">
+                        <div className="font-montserrat font-bold text-2xl md:text-3xl text-white mb-2 drop-shadow-sm">Collaboration & Analytics</div>
+                        <div className="text-lg md:text-xl font-semibold text-white/90 drop-shadow-sm">Experience integrating analytics, monitoring tools, and working in team-driven environments.</div>
                       </div>
                       <div className="relative">
-                        <div className="bg-white px-3 pt-15 pb-3 aspect-auto rounded-xl translate-x-3 -translate-y-3 drop-shadow-2xl">
+                        <div className={`bg-white p-3 aspect-auto rounded-xl translate-x-3 -translate-y-3 drop-shadow-2xl transition-all duration-300 ${isVisible["photo-4"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)", transitionDelay: "800ms"}}>
                           <Image
-                            src='/food.png'
+                            src='/ana.png'
                             alt="ui/ux"
-                            width={350}
-                            height={350}
-                            className="object-contain"
+                            width={450}
+                            height={450}
+                            className="object-cover"
                           />
                         </div>
-                        <div className="bg-white px-3 pt-15 pb-3 aspect-auto absolute inset-0 -z-10 rounded-xl -translate-x-3 translate-y-3">
+                        <div className={`bg-white p-3 aspect-auto absolute inset-0 -z-10 rounded-xl -translate-x-3 translate-y-3 transition-all duration-300 ${isVisible["photo-4"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)", transitionDelay: "600ms"}}>
                           <Image
                             src='/study.png'
                             alt="ui/ux"
-                            width={350}
-                            height={350}
-                            className="object-contain"
+                            width={450}
+                            height={450}
+                            className="object-cover"
                           />
                         </div>
                       </div>
@@ -457,13 +456,12 @@ export default function Portfolio() {
                       </div>
                     </div>
 
-                  <div className="text-xl px-6 leading-relaxed text-white/90 drop-shadow-sm">
+                  <div className="text-lg md:text-xl md:px-6 leading-relaxed text-white/90 drop-shadow-sm max-md:text-center">
                     With this skill set, I aim to deliver{" "}
                     <span className="text-white font-semibold">modern, reliable, and user-friendly web applications</span>{" "}
                     tailored to real-world needs.
                   </div>
                   </div>
-                </div>
               </div>
             </div>
           </div>
