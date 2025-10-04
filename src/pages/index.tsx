@@ -111,7 +111,7 @@ export default function Portfolio() {
           muted
           loop
           playsInline
-          className="inset-0 fixed -z-10"
+          className="inset-0 fixed object-cover -z-10 h-full w-full"
         />
 
         <div className="fixed inset-0 bg-black/50 z-0"></div>
