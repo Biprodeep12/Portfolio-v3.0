@@ -431,8 +431,8 @@ export default function Portfolio() {
 
                     <div id="photo-4" data-animate className="flex flex-col lg:flex-row lg:gap-20 gap-5 items-center justify-between">
                       <div className="flex lg:hidden flex-col max-w-xl max-md:text-center">
-                        <div className="font-montserrat font-bold text-2xl md:text-3xl text-white mb-2 drop-shadow-sm">Collaboration & Analytics</div>
-                        <div className="text-lg md:text-xl font-semibold text-white/90 drop-shadow-sm">Experience integrating analytics, monitoring tools, and working in team-driven environments.</div>
+                        <div className="font-montserrat font-bold text-2xl md:text-3xl text-white mb-2 drop-shadow-sm">Data-Driven Development</div>
+                        <div className="text-lg md:text-xl font-semibold text-white/90 drop-shadow-sm">Leveraging analytics and insights to inform decisions and optimize user-focused solutions.</div>
                       </div>
                       <div className="relative">
                         <div className={`bg-white p-3 aspect-auto rounded-xl translate-x-3 -translate-y-3 drop-shadow-2xl transition-all duration-300 ${isVisible["photo-4"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`} style={{ boxShadow: "-10px 10px 4px rgba(0, 0, 0, 0.2)", transitionDelay: "800ms"}}>
@@ -455,8 +455,8 @@ export default function Portfolio() {
                         </div>
                       </div>
                       <div className="lg:flex hidden flex-col max-w-xl">
-                        <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">Collaboration & Analytics</div>
-                        <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Experience integrating analytics, monitoring tools, and working in team-driven environments.</div>
+                        <div className="font-montserrat font-bold text-3xl text-white mb-2 drop-shadow-sm">Data-Driven Development</div>
+                        <div className="text-xl font-semibold text-white/90 drop-shadow-sm">Leveraging analytics and insights to inform decisions and optimize user-focused solutions.</div>
                       </div>
                     </div>
 
@@ -621,7 +621,7 @@ export default function Portfolio() {
                   <div className="flex items-center space-x-3 mb-3">
                     <span className="text-xl font-semibold text-white/90 drop-shadow-sm">SaffronStays</span>
                     <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-                    <span className="text-white/80 drop-shadow-sm">Remote</span>
+                    <span className="text-white/90 drop-shadow-sm">Remote</span>
                     <div className="w-2 h-2 bg-white/60 rounded-full"></div>
                     <span className="text-white/80 drop-shadow-sm italic">2025</span>
                   </div>
@@ -632,11 +632,11 @@ export default function Portfolio() {
               </div>
 
               <div className="space-y-4">
-                <p className="text-white/90 leading-relaxed drop-shadow-sm">
+                <p className="text-white leading-relaxed drop-shadow-sm">
                   Contributed to the frontend development of a luxury vacation rental platform, focusing on building new pages and enhancing user engagement across the website.
                 </p>
 
-                <ul className="space-y-3 text-white/80">
+                <ul className="space-y-3 text-white">
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></div>
                     <span className="drop-shadow-sm">
