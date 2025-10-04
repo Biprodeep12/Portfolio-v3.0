@@ -97,18 +97,22 @@ export default function Portfolio() {
           name="description" 
           content="Biprodeep's portfolio showcasing full-stack development skills in Next.js, React, TypeScript, Node.js, and Python. Explore projects, services, and achievements." 
         />
+        <link
+          rel="preload"
+          as="video"
+          href="/bg.mp4"
+          type="video/mp4"
+        />
       </Head>
       <div className="min-h-screen bg-background text-foreground relative">
-        <div
-          className="fixed -inset-20 bg-cover bg-center bg-no-repeat z-0"
-          style={{
-            backgroundImage: "url('/bgk.jpg')",
-            backgroundSize: "300%",
-            transform: `translateY(${scrollY * 0.02}px)`,
-            willChange: "transform",
-            minHeight: "120vh",
-          }}
-        ></div>
+        <video
+          src="/bg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="inset-0 fixed -z-10"
+        />
 
         <div className="fixed inset-0 bg-black/50 z-0"></div>
 
@@ -511,7 +515,7 @@ export default function Portfolio() {
                           alt={project.title}
                           width={480}
                           height={480}
-                          className="w-full h-full object-center group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </div>
