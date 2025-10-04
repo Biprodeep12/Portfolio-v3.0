@@ -207,14 +207,13 @@ export default function Portfolio() {
           </div>
         </nav>
 
-        <section className="min-h-screen flex items-center justify-center px-6 relative z-10">
+        <section id="hero-content" data-animate className="min-h-screen flex items-center justify-center px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div
-              className={`transition-all duration-1000 ${
-                scrollY < 100 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`transition-all duration-2000 ${
+                isVisible["hero-content"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-
               <div className="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
                 Hi I am <span className="text-white font-semibold">Biprodeep Bose</span>
               </div>
