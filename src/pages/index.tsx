@@ -3,44 +3,6 @@ import { Mail, Github, Linkedin, ExternalLink, Menu, X, ChevronDown, Instagram, 
 import Image from "next/image"
 import Head from "next/head"
 
-export default function Portfolio() {
-  const [scrollY, setScrollY] = useState(0)
-  const [isVisible, setIsVisible] = useState<Record<string, boolean>>({})
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisible((prev) => ({
-            ...prev,
-            [entry.target.id]: entry.isIntersecting,
-          }))
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    const elements = document.querySelectorAll("[data-animate]")
-    elements.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsMobileMenuOpen(false)
-    }
-  }
-
   const projects = [
     {
       title: "FoodDraft",
@@ -89,6 +51,51 @@ export default function Portfolio() {
     { name: "Github", icon: "https://skillicons.dev/icons?i=github" },
   ]
 
+export default function Portfolio() {
+  const [scrollY, setScrollY] = useState(0)
+  const [isVisible, setIsVisible] = useState<Record<string, boolean>>({})
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [intro, setIntro] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.id]: entry.isIntersecting,
+          }))
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    const elements = document.querySelectorAll("[data-animate]")
+    elements.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIntro(false)
+    }, 4000);
+  },[])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      setIsMobileMenuOpen(false)
+    }
+  }
+
   return (
     <>
       <Head>
@@ -113,10 +120,11 @@ export default function Portfolio() {
           playsInline
           className="inset-0 fixed object-cover -z-10 h-full w-full"
         />
+        <div className="fixed inset-0 -z-5 bg-black introBlack"></div>
 
-        <div className="fixed inset-0 bg-black/50 z-0"></div>
+        <div className="fixed inset-0 bg-black/50 z-8"></div>
 
-        <nav className={`fixed w-full max-md:backdrop-blur-md z-50 ${scrollY > 50 && window.innerWidth > 768 ? "top-5":"top-0"} transition-all duration-300`}>
+        <nav className={`fixed w-full max-md:backdrop-blur-md z-50 ${scrollY > 50 && window.innerWidth > 768 ? "top-5":"top-0"} ${intro?'-translate-y-25':'translate-y-0'} transition-all duration-300`}>
           <div className={`mx-auto px-6 border-white rounded-full ${scrollY > 50 && window.innerWidth > 768 ? "max-w-5xl border-2 py-3 bg-white/10  backdrop-blur-md":"py-4 max-w-6xl border-0"} transition-all duration-300` }>
             <div className="flex justify-between items-center">
               <div className="flex flex-row gap-4 flex-nowrap items-center">
@@ -219,7 +227,11 @@ export default function Portfolio() {
               </div>
 
               <div className="font-montserrat font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-8 leading-tight">
-                <span className="mb-2 text-white drop-shadow-2xl block text-nowrap">FullStack Developer</span>
+                <div className="glitch-wrapper">
+                  <span className={`mb-2 text-white drop-shadow-2xl block text-nowrap ${intro? 'glitch':''}`} data-glitch="FullStack Developer">
+                    FullStack Developer
+                  </span>
+                </div>
                 <span className="block text-white drop-shadow-2xl relative">
                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/60 rounded-full"></div>
                 </span>
@@ -230,7 +242,7 @@ export default function Portfolio() {
                 <span className="text-white font-semibold">thoughtful design</span>
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-10">
+              <div className={`flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-10 ${intro?'opacity-0 translate-y-20':'opacity-100 translate-y-0'} transition-all duration-300`}>
                 <button
                   onClick={() => scrollToSection("projects")}
                   className="group cursor-pointer bg-white text-black px-10 py-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl relative overflow-hidden font-semibold"
@@ -732,7 +744,8 @@ export default function Portfolio() {
 
               <div className="flex justify-center mb-12">
                 <a
-                  href="mailto:hello@example.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=bipbose123@gmail.com"
+                  target="_blank"
                   className="bg-white text-black px-10 py-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3 font-semibold"
                 >
                   <Mail className="w-5 h-5" />

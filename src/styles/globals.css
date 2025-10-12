@@ -12,3 +12,79 @@
 .animate-marquee {
   animation: marquee 10s linear infinite;
 }
+
+@keyframes blackIntro {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.introBlack{
+  animation: blackIntro 5s ease-in forwards;
+}
+
+.glitch-wrapper {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.glitch {
+   position: relative;
+   color: #fff;
+   z-index: 1;
+   text-wrap: nowrap;
+}
+
+.glitch:before,
+.glitch:after {
+   display: block;
+   content: attr(data-glitch);
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0.8;
+}
+
+.glitch:before {
+   animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+   color: #0ff;
+   z-index: -1;
+}
+
+.glitch:after {
+   animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+   color: #ff00ff;
+   z-index: -2;
+}
+
+@keyframes glitch-color {
+   0% {
+      transform: translate(0);
+   }
+
+   20% {
+      transform: translate(-3px, 3px);
+   }
+
+   40% {
+      transform: translate(-3px, -3px);
+   }
+
+   60% {
+      transform: translate(3px, 3px);
+   }
+
+   80% {
+      transform: translate(3px, -3px);
+   }
+
+   to {
+      transform: translate(0);
+   }
+}
