@@ -67,13 +67,13 @@ export default function Portfolio() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVisible((prev) => ({
-            ...prev,
-            [entry.target.id]: entry.isIntersecting,
-          }))
+          if (entry.isIntersecting) {
+            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }))
+            observer.unobserve(entry.target)
+          }
         })
       },
-      { threshold: 0.1 },
+      { threshold: 0.2 }
     )
 
     const elements = document.querySelectorAll("[data-animate]")
@@ -83,10 +83,9 @@ export default function Portfolio() {
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
-      setIntro(false)
-    }, 4000);
-  },[])
+    const timer = setTimeout(() => setIntro(false), 4000)
+    return () => clearTimeout(timer)
+  }, [])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -112,15 +111,17 @@ export default function Portfolio() {
         />
       </Head>
       <div className="min-h-screen bg-background text-foreground relative">
-        <video
-          src="/bg.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="inset-0 fixed object-cover -z-10 h-full w-full"
-        />
-        <div className="fixed inset-0 -z-5 introBlack" style={{ backgroundColor: 'black' }}></div>
+        {!intro && (
+          <video
+            src="/bg.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="fixed inset-0 object-cover -z-10 h-full w-full"
+          />
+        )}
+        <div className={`fixed inset-0 -z-5 ${intro ? 'bg-black':'bg-black/50'} transition-all duration-500 ease-in-out`}/>
 
         <nav className={`fixed w-full max-md:backdrop-blur-md z-50 ${scrollY > 50 && window.innerWidth > 768 ? "top-5":"top-0"} ${intro?'-translate-y-25':'translate-y-0'} transition-all duration-300`}>
           <div className={`mx-auto px-6 border-white rounded-full ${scrollY > 50 && window.innerWidth > 768 ? "max-w-5xl border-2 py-3 bg-white/10  backdrop-blur-md":"py-4 max-w-6xl border-0"} transition-all duration-300` }>

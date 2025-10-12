@@ -22,13 +22,6 @@
   }
 }
 
-.introBlack {
-  animation: blackIntro 5s ease-in-out forwards;
-  will-change: background-color;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
 .glitch-wrapper {
    width: 100%;
    display: flex;
