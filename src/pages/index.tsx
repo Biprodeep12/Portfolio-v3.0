@@ -120,7 +120,7 @@ export default function Portfolio() {
           playsInline
           className="inset-0 fixed object-cover -z-10 h-full w-full"
         />
-        <div className={`fixed inset-0 -z-5 ${intro? 'introBlack':'bg-black/50'}`}></div>
+        <div className="fixed inset-0 -z-5 introBlack" style={{ backgroundColor: 'black' }}></div>
 
         <nav className={`fixed w-full max-md:backdrop-blur-md z-50 ${scrollY > 50 && window.innerWidth > 768 ? "top-5":"top-0"} ${intro?'-translate-y-25':'translate-y-0'} transition-all duration-300`}>
           <div className={`mx-auto px-6 border-white rounded-full ${scrollY > 50 && window.innerWidth > 768 ? "max-w-5xl border-2 py-3 bg-white/10  backdrop-blur-md":"py-4 max-w-6xl border-0"} transition-all duration-300` }>
